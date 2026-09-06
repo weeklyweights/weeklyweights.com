@@ -1,0 +1,281 @@
+{
+  "tracks": {
+    "hardware": "Hardware & serving economics",
+    "serving": "Inference engines and throughput",
+    "llm": "Language models",
+    "image-video": "Image and video generation",
+    "3d": "3D and mesh generation",
+    "audio": "Music, voice and sound",
+    "agents": "Agents and developer tooling",
+    "tooling": "Workflow tooling and pipeline",
+    "leadership": "Strategy, licensing, cost and adoption",
+    "research": "Papers ahead of product",
+    "community": "What practitioners are actually talking about",
+    "open-weights": "Open-weight model releases",
+    "industry": "How AI is actually landing in specific industries \u2014 adoption, mandates, labour impact"
+  },
+  "topics": {
+    "quantization": {
+      "track": "hardware",
+      "level": 201,
+      "prereqs": [
+        "numeric-precision"
+      ],
+      "teaches": [
+        "Why format choice is gated by silicon generation"
+      ]
+    },
+    "numeric-precision": {
+      "track": "hardware",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "What a float actually stores and why size matters"
+      ]
+    },
+    "gpu-hardware": {
+      "track": "hardware",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "Reading a GPU spec sheet for what actually constrains you"
+      ]
+    },
+    "inference-serving": {
+      "track": "serving",
+      "level": 201,
+      "prereqs": [
+        "gpu-hardware"
+      ],
+      "teaches": [
+        "What determines tokens per second and where the bottleneck sits"
+      ]
+    },
+    "moe-architecture": {
+      "track": "llm",
+      "level": 201,
+      "prereqs": [
+        "transformer-basics"
+      ],
+      "teaches": [
+        "Why total and active parameters answer different questions"
+      ]
+    },
+    "transformer-basics": {
+      "track": "llm",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "The one architecture under nearly all of this"
+      ]
+    },
+    "context-and-memory": {
+      "track": "llm",
+      "level": 201,
+      "prereqs": [
+        "transformer-basics"
+      ],
+      "teaches": [
+        "What a context window costs and why longer is not free"
+      ]
+    },
+    "diffusion-basics": {
+      "track": "image-video",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "How an image gets made from noise"
+      ]
+    },
+    "latent-space-vae": {
+      "track": "image-video",
+      "level": 201,
+      "prereqs": [
+        "diffusion-basics"
+      ],
+      "teaches": [
+        "Why the VAE sets a quality ceiling nothing else can raise"
+      ]
+    },
+    "distillation": {
+      "track": "image-video",
+      "level": 201,
+      "prereqs": [
+        "diffusion-basics"
+      ],
+      "teaches": [
+        "Trading flexibility for speed, and when that trade breaks"
+      ]
+    },
+    "conditioning-control": {
+      "track": "image-video",
+      "level": 201,
+      "prereqs": [
+        "diffusion-basics"
+      ],
+      "teaches": [
+        "Every lever for making the model do what the shot needs"
+      ]
+    },
+    "video-generation": {
+      "track": "image-video",
+      "level": 201,
+      "prereqs": [
+        "diffusion-basics",
+        "latent-space-vae"
+      ],
+      "teaches": [
+        "What makes video hard that images are not: time"
+      ]
+    },
+    "3d-generation": {
+      "track": "3d",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "Generative geometry and where it meets a real asset pipeline"
+      ]
+    },
+    "audio-voice": {
+      "track": "audio",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "Synthetic voice, and the consent questions that come with it"
+      ]
+    },
+    "audio-music": {
+      "track": "audio",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "Generative music and where the open models actually are"
+      ]
+    },
+    "agents-tooling": {
+      "track": "agents",
+      "level": 201,
+      "prereqs": [
+        "transformer-basics"
+      ],
+      "teaches": [
+        "What an agent is beyond a chat loop, and what it can be trusted with"
+      ]
+    },
+    "workflow-tooling": {
+      "track": "tooling",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "The graph is the pipeline: composing models into real work"
+      ]
+    },
+    "licensing-and-rights": {
+      "track": "leadership",
+      "level": 301,
+      "prereqs": [],
+      "teaches": [
+        "Reading a licence as an engineering and business constraint"
+      ]
+    },
+    "evaluation-benchmarks": {
+      "track": "leadership",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "What a benchmark measures and what it silently does not"
+      ]
+    },
+    "cost-and-procurement": {
+      "track": "leadership",
+      "level": 301,
+      "prereqs": [
+        "gpu-hardware",
+        "inference-serving"
+      ],
+      "teaches": [
+        "Turning a technical choice into a number leadership can act on"
+      ]
+    },
+    "org-and-adoption": {
+      "track": "leadership",
+      "level": 301,
+      "prereqs": [],
+      "teaches": [
+        "Getting a studio to actually use the thing"
+      ]
+    },
+    "ai-in-education": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "What AI changes for a teacher this term, and what is safe to use with student work"
+      ]
+    },
+    "ai-in-health": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "Documentation burden, patient data, and what must never go into a hosted model"
+      ]
+    },
+    "algorithmic-management": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "When AI is done to a workforce rather than given to it, and what that means for the person on the floor"
+      ]
+    },
+    "ai-in-bpo": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "What AI means for the largest outsourced workforces on earth, from the worker's side"
+      ]
+    },
+    "ai-for-small-business": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "What a small business can actually automate this month, for free, and what to leave alone"
+      ]
+    },
+    "ai-in-public-sector": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "Sensitive data, accountability, and the specific risks of AI in services people cannot opt out of"
+      ]
+    },
+    "ai-in-agriculture": {
+      "track": "industry",
+      "level": 101,
+      "prereqs": [],
+      "teaches": [
+        "Advisory, weather and disease tools reaching smallholders, and what they get wrong"
+      ]
+    },
+    "ai-in-professional-services": {
+      "track": "industry",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "AI in the professions that carry liability: what is defensible to delegate and what is not"
+      ]
+    },
+    "ai-and-labour": {
+      "track": "industry",
+      "level": 201,
+      "prereqs": [],
+      "teaches": [
+        "Exposure is not displacement: reading labour-market evidence without the hype in either direction"
+      ]
+    }
+  }
+}

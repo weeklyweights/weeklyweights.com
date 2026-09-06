@@ -1,0 +1,5 @@
+# The course is open to read. AI-training crawler policy is set at the
+# Cloudflare zone, not here.
+User-agent: *
+Allow: /
+Sitemap: https://weeklyweights.com/sitemap-index.xml

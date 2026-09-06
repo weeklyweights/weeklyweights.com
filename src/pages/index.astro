@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const lessons = (await getCollection('lessons', ({ data }) => data.status === 'published'))
+  .sort((a, b) => a.data.level - b.data.level || a.data.title.localeCompare(b.data.title));
+const levels = [
+  { n: 101, name: 'Foundations', who: 'Anyone. Assumes nothing.' },
+  { n: 201, name: 'Practitioner', who: 'You use a tool at work.' },
+  { n: 301, name: 'Leadership', who: 'You decide for other people.' },
+];
+---
+<Base title="Start here">
+  <h1>Told to "do AI" at work, with no idea where to start?</h1>
+  <p>This is the first step. What the technology actually is, what it is bad at, what is safe to type into it, and what you can do this week for free.</p>
+  {levels.map(l => {
+    const mine = lessons.filter(x => x.data.level === l.n);
+    return (
+      <section>
+        <h2><span class="mono">{l.n}</span> {l.name}</h2>
+        <p class="muted">{l.who}</p>
+        {mine.length ? (
+          <ul class="list">{mine.map(x => <li><a href={`/lessons/${x.id}`}>{x.data.title}</a> — <span class="muted">{x.data.summary}</span></li>)}</ul>
+        ) : (
+          <p class="muted">No lessons published at this level yet.</p>
+        )}
+      </section>
+    );
+  })}
+  <p class="muted">Nothing is published yet. The first lesson planned is <em>what is safe to type into an AI</em>.</p>
+</Base>
