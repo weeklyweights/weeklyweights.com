@@ -6,3 +6,8 @@ dist/
 .env.*
 .dev.vars
 .DS_Store
+
+# Wrangler local state and secrets
+.wrangler/
+.dev.vars
+.dev.vars.*

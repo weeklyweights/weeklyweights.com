@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "weeklyweights-site",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // `main` and `assets.directory` are filled in by the Astro adapter at build
+  // time; the deployable config is emitted at dist/server/wrangler.json.
+  "assets": {
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": true },
+  "workers_dev": true
+  // Custom domains are added once the workers.dev deploy is verified.
+  // Secrets (Resend key, OAuth client secrets) are set with `wrangler secret
+  // put`, never here. The D1 binding is added in the accounts build.
+}
