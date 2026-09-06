@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons', ({ data }) => data.status === 'published');
+  return lessons.map(l => ({ params: { id: l.id }, props: { lesson: l } }));
+}
+const { lesson } = Astro.props;
+const { Content } = await render(lesson);
+---
+<Base title={lesson.data.title} description={lesson.data.summary}>
+  <p class="mono muted">{lesson.data.level} · updated {lesson.data.updated.toISOString().slice(0,10)}</p>
+  <h1>{lesson.data.title}</h1>
+  <Content />
+</Base>
